@@ -1,0 +1,21 @@
+{% extends 'template.html' %}
+
+{% block content %}
+{% for genero in generos %}
+    <h2>{{ genero.nome }}</h2>
+    <ul>
+        {% for filme in filmes %}
+            {% if filme.genero == genero %}
+                <li>
+                    <a href="{% url 'filme' filme.nome %}">{{filme.nome}}</a>
+                    Atores:
+                        {% for ator in filme.atores.all %}
+                            {{ ator.nome }}.
+                        {% endfor %}
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endfor %}
+
+{% endblock %}

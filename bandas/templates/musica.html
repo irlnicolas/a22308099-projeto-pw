@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<h2>Nome: {{musica.titulo}}</h2>
+<p>Duração: {{musica.duracao}}<p>
+<a href="{{ musica.link }}" target="_blank">Spotify</a>
+<hr>
+<a href="{% url 'bandas' %}">Voltar - Lista de bandas</a>
+{% endblock %}

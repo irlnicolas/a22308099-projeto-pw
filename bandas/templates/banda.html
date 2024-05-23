@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1>{{banda.nome}}</h1>
+<h2>{{banda.genero}}</h2>
+<img src="{{banda.foto.url}}"/>
+<br>
+<hr>
+<h2>Albuns</h2>
+
+{% for album in albuns %}
+Titulo: <a href="{% url 'album' album.titulo %}">{{album.titulo}}</a>
+{% endfor %}
+
+<hr>
+<a href="{% url 'bandas' %}">Voltar - Lista de bandas</a>
+{% endblock %}

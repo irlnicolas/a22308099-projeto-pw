@@ -1,0 +1,19 @@
+{% extends 'template.html' %}
+
+{% block content %}
+<h2>{{ filme.nome }}</h2>
+<br>
+<p>Atores:</p>
+<ul>
+    {% for ator in atores %}
+        <li>
+            {{ ator.nome }}
+        </li>
+    {% endfor %}
+</ul>
+<br>
+<img src="{{filme.capa.url}}"/>
+<br><br>
+<a href="{% url 'filmes' %}">Lista de filmes</a>
+
+{% endblock %}

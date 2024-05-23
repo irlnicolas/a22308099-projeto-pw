@@ -1,0 +1,25 @@
+{% extends 'authentication/auth_layout.html' %}
+
+{% block content %}
+
+<h2>Login</h2>
+
+{% if mensagem %}
+<p>{{mensagem}}</p>
+{% endif %}
+
+<form method='POST'>
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <input type="submit" value="Login">
+
+</form>
+
+<br>
+
+<a href="{% url 'register' %}">Registo</a> - <a href="{% url 'reset_password' %}">Recuperar password</a>
+
+{% endblock %}

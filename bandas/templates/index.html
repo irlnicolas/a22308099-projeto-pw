@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<ol>
+{% for banda in bandas %}
+<li>Nome: <a href="{% url 'banda' banda.nome %}">{{banda.nome}}</a> - Genero: {{banda.genero}}</li>
+{% endfor %}
+</ol>
+{% endblock %}
